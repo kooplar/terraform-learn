@@ -1,0 +1,20 @@
+run on each 3 directories in order:
+
+module-example/global/s3
+module-example/prod/data-stores/mysql
+module-example/prod/services/webserver-cluster
+
+```
+terraform init
+terraform apply
+```
+
+and to bring down in reverse order
+
+```
+terraform destroy
+```
+
+note the module-example/stage needs some tweaks to work (pointing to the same databases and using diferent .tfstate files etc.
+
+the multi-repo is a straight copy from https://github.com/brikis98/terraform-up-and-running-code/tree/3rd-edition/code/terraform/04-terraform-module/multi-repo-example/live and not tested or edited
